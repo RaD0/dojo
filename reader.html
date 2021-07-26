@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>READER</title>
+</head>
+<body>
+    <h1>Welcome to Reader</h1>
+    <button id="click">CLICK ME</button>
+</body>
+
+    <script>
+    let messenger = document.getElementById("click");
+
+    messenger.addEventListener("click", messageContentScript);
+
+    function messageContentScript() {
+      console.log("Secind");
+      window.postMessage({
+        direction: "from-page-script",
+        message: "Message from the page"
+      }, "*");
+    }
+    </script>
+</html>
